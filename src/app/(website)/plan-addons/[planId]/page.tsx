@@ -12,7 +12,8 @@ interface AddOn {
   _id: string;
   name?: string;
   addOn?: string;
-  price: number;
+  flexiblePrice: number;
+  tieredPrice: number;
   pack?: string;
   description?: string;
   planId?: string;
@@ -24,6 +25,7 @@ interface Plan {
   description: string;
   price: number;
   pack: "monthly" | "weekly" | "daily";
+  type: "flexible" | "tiered"
 }
 
 export default function AddOnsPage() {
@@ -33,7 +35,7 @@ export default function AddOnsPage() {
   const { data: session, status } = useSession();
   const userId = session?.user?.id;
   const token = session?.accessToken;
- 
+
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -133,8 +135,8 @@ export default function AddOnsPage() {
     selectedAddOns.forEach((addOnId) => {
       const addOn = addOns?.find((a: AddOn) => a._id === addOnId);
       if (addOn) {
-        total += addOn.price;
-      }
+        total += plan?.type === "flexible" ? addOn?.flexiblePrice : addOn?.tieredPrice
+      };
     });
 
     setTotalPrice(total);
@@ -278,11 +280,10 @@ export default function AddOnsPage() {
             {addOns?.map((addOn: AddOn) => (
               <Card
                 key={addOn._id}
-                className={`bg-[#FFFFFF1A] border-0 overflow-hidden transition-all ${
-                  selectedAddOns.includes(addOn._id)
-                    ? "ring-2 ring-primary"
-                    : "hover:bg-[#FFFFFF30]"
-                }`}
+                className={`bg-[#FFFFFF1A] border-0 overflow-hidden transition-all ${selectedAddOns.includes(addOn._id)
+                  ? "ring-2 ring-primary"
+                  : "hover:bg-[#FFFFFF30]"
+                  }`}
               >
                 <CardContent className="p-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -307,7 +308,7 @@ export default function AddOnsPage() {
                     </div>
                   </div>
                   <div className="text-[#F7E39F] font-semibold">
-                    +${addOn.price}
+                    +{plan?.type === "flexible" ? addOn?.flexiblePrice : addOn?.tieredPrice}$
                   </div>
                 </CardContent>
               </Card>
@@ -345,7 +346,7 @@ export default function AddOnsPage() {
                               {addOn?.name || addOn?.addOn || "Add-on Service"}
                             </span>
                             <span className="text-white font-medium">
-                              ${addOn?.price}
+                              ${plan?.type === "flexible" ? addOn?.flexiblePrice : addOn?.tieredPrice}
                             </span>
                           </div>
                         );
