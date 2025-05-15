@@ -77,6 +77,8 @@ export default function VisitLogsPage() {
     },
     enabled: !!token,
   })
+  
+  
 
   // Fetch completed visits
   const { data: completedVisits, isLoading: completedVisitsLoading } = useQuery({
@@ -200,7 +202,7 @@ export default function VisitLogsPage() {
                     <div className="flex items-center gap-2">
                       <div>
                         <div className="font-medium">{visit.staff?.fullname || "N/A"}</div>
-                        <div className="text-xs text-muted-foreground">{visit.staff?.email || "N/A"}</div>
+                        
                       </div>
                     </div>
                   </TableCell>
@@ -215,17 +217,20 @@ export default function VisitLogsPage() {
                               ? "secondary"
                               : "outline"
                       }
-                      className={
-                        visit.status === "completed"
-                          ? "bg-[#B3E9C9] text-black"
+                      className={`text-black 
+                        hover:bg-[#B3E9C9] 
+                        active:bg-[#B3E9C9] 
+                        ${visit.status === "completed"
+                          ? "bg-[#B3E9C9]"
                           : visit.status === "cancelled"
-                            ? "bg-[#E9BFBF] text-black"
+                            ? "bg-[#E9BFBF] hover:bg-[#E9BFBF] active:bg-[#E9BFBF]"
                             : visit.status === "pending"
-                              ? "bg-[#F7E39F] text-black"
+                              ? "bg-[#F7E39F] hover:bg-[#F7E39F] active:bg-[#F7E39F]"
                               : visit.status === "confirmed"
-                                ? "bg-[#B3E9C9] text-black"
+                                ? "bg-[#B3E9C9]"
                                 : ""
-                      }
+                        }`}
+                      
                     >
                       {visit.status.charAt(0).toUpperCase() + visit.status.slice(1)}
                     </Badge>
@@ -233,11 +238,11 @@ export default function VisitLogsPage() {
                   <TableCell>
                     <Badge
                       variant={!visit.issues || visit.issues.length === 0 ? "default" : "destructive"}
-                      className={
-                        !visit.issues || visit.issues.length === 0
-                          ? "bg-[#B3E9C9] text-black"
-                          : "bg-[#E9BFBF] text-black"
-                      }
+                      className={`text-black ${!visit.issues || visit.issues.length === 0
+                          ? "bg-[#B3E9C9] hover:bg-[#B3E9C9] active:bg-[#B3E9C9]"
+                          : "bg-[#E9BFBF] hover:bg-[#E9BFBF] active:bg-[#E9BFBF]"
+                        }`}
+                      
                     >
                       {!visit.issues || visit.issues.length === 0 ? "No issue" : "Issue found"}
                     </Badge>

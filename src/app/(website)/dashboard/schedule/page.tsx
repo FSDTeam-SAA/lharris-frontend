@@ -99,6 +99,8 @@ export default function SchedulePage() {
     },
     enabled: !!token && activeTab === "upcoming-visits",
   });
+  // console.log("upcomingVisits", upcomingVisits);
+  
 
   return (
     <DashboardLayout
