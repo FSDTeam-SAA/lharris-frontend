@@ -18,10 +18,10 @@ const ContactInformation = () => {
         </div>
         <div className="text-white">
           <p className="text-[12px] md:text-[16px] font-semibold mb-2">
-            24/7 Hotline: 1-800-SECURE-NOW
+            24/7 Hotline: 336-995-3239
           </p>
           <p className="text-[12px] md:text-[16px] font-semibold">
-            Non-Emergency: 1-800-HELP-SEC
+            Non-Emergency: 336-995-3239
           </p>
         </div>
       </div>
@@ -48,7 +48,7 @@ const ContactInformation = () => {
           ></iframe>
         </div>
         <div className="text-white text-[12px] md:text-[16px] font-semibold">
-          123 Security Lane, Safe City, SC
+          648 Hanes Mall Blvd Winston-Salem NC
         </div>
       </div>
 

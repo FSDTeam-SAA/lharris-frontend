@@ -53,14 +53,14 @@ const Mission = () => {
 
         {/* Timeline Section */}
         <div id="our-journey" className="w-full pt-12 sm:pt-16 md:pt-20">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#F7E39F] text-center mb-8">
+          {/* <h2 className="text-2xl sm:text-3xl font-bold text-[#F7E39F] text-center mb-8">
             Our Journey
-          </h2>
+          </h2> */}
           <div className="relative">
             <div className="absolute left-1/2 top-0 h-full w-[2px] bg-[#F7E39F] transform -translate-x-1/2"></div>
             <div className="flex flex-col gap-6">
               {/* Timeline Item 1 */}
-              <div className="flex flex-row items-center justify-between w-full">
+              {/* <div className="flex flex-row items-center justify-between w-full">
                 <div className="w-1/2 text-right pr-4">
                   <h3 className="text-lg sm:text-xl font-bold text-[#F7E39F] ">
                     2010: Foundation
@@ -72,10 +72,10 @@ const Mission = () => {
                 </div>
                 <div className="rounded-full bg-[#F7E39F] w-4 h-4 z-10"></div>
                 <div className="w-1/2"></div>
-              </div>
+              </div> */}
 
               {/* Timeline Item 2 */}
-              <div className="flex flex-row items-center justify-between w-full">
+              {/* <div className="flex flex-row items-center justify-between w-full">
                 <div className="w-1/2"></div>
                 <div className="rounded-full bg-[#F7E39F] w-4 h-4 z-10"></div>
                 <div className="w-1/2 text-left pl-4">
@@ -87,10 +87,10 @@ const Mission = () => {
                     community safety.
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               {/* Timeline Item 3 */}
-              <div className="flex flex-row items-center justify-between w-full">
+              {/* <div className="flex flex-row items-center justify-between w-full">
                 <div className="w-1/2 text-right pr-4">
                   <h3 className="text-lg sm:text-xl font-bold text-[#F7E39F]">
                     2020: Technology Integration
@@ -102,10 +102,10 @@ const Mission = () => {
                 </div>
                 <div className="rounded-full bg-[#F7E39F] w-4 h-4 z-10"></div>
                 <div className="w-1/2"></div>
-              </div>
+              </div> */}
 
               {/* Timeline Item 4 */}
-              <div className="flex flex-row items-center justify-between w-full">
+              {/* <div className="flex flex-row items-center justify-between w-full">
                 <div className="w-1/2"></div>
                 <div className="rounded-full bg-[#F7E39F] w-4 h-4 z-10"></div>
                 <div className="w-1/2 text-left pl-4">
@@ -117,7 +117,7 @@ const Mission = () => {
                     to home security.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
