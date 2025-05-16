@@ -63,7 +63,7 @@ export function RegisterForm() {
   async function onSubmit(data: RegisterFormValues) {
     setIsLoading(true);
 
-   
+
 
     try {
       const result = await registerUser({
@@ -73,14 +73,17 @@ export function RegisterForm() {
         confirmPassword: data?.confirmPassword,
       });
 
-    
+
 
       if (result.success) {
         toast("Please verify your email to continue.");
         router.push("/verify");
-      } else {
-        toast("Registration failed");
       }
+
+      if (!result.success) {
+        toast(result.message);
+      }
+
     } catch (error) {
       toast("Something went wrong || " + error);
     } finally {
@@ -90,7 +93,7 @@ export function RegisterForm() {
 
   return (
     <div className="flex min-h-screen overflow-hidden">
-      <div className="hidden lg:flex w-1/2 bg-[#0a1155] text-white p-12 flex-col justify-between relative ">
+      <div className="hidden lg:flex w-1/2 bg-[#0a1155] text-white p-12 flex-col justify-between relative overflow-hidden">
         <div className="border-[7px] border-[#212767] w-[592px] h-[455px] rounded-[400px] absolute lg:-top-[200px] xl:-bottom-[300px] -left-[500px] rotate-[-45deg]"></div>
         <div>
           <Link href="/">
