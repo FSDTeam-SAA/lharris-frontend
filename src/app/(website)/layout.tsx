@@ -6,7 +6,6 @@ import LayoutWrapper from "@/components/shared/layout-wrapper";
 import AuthProvider from "@/components/session-provide";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
