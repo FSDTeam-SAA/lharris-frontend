@@ -28,7 +28,7 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
     return (
       <div className="flex items-center justify-center h-full">
         <p className="text-gray-500">
-          No messages yet. Start the conversation!
+          No messages yet. Scroll down to Start the conversation!
         </p>
       </div>
     );

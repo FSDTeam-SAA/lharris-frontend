@@ -159,7 +159,7 @@ export default function UserChatPage() {
       userName={userInfo?.name}
       userRole={userInfo?.role}
     >
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-[90vh]">
         {/* <div className="h-16 border-b flex items-center px-4 justify-between">
           <div className="flex items-center gap-3">
             <h1 className="font-semibold">Client Name</h1>
