@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <AuthProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
           <ToastContainer position="top-right" autoClose={3000} />
-          <Toaster />
+          {/* <Toaster /> */}
         </AuthProvider>
       </body>
     </html>

@@ -17,7 +17,8 @@ export default function LayoutWrapper({
   const isAuthRoute =
     pathname === "/login" ||
     pathname === "/sign-up" ||
-    pathname === "/forgot-password";
+    pathname === "/forgot-password" ||
+    pathname === "/verify";
   const queryClient = new QueryClient();
 
   return (

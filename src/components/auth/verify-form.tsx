@@ -72,16 +72,28 @@ export default function Verifyform() {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      <div className="hidden md:block md:w-1/2 bg-stone-100">
-        <Image
-          height={200}
-          width={1100}
-          src="/images/otp.png"
-          alt="Fashion model"
-          className="min-w-[405px] min-h-[1000px]"
-        />
+      <div className="hidden lg:flex w-1/2 bg-[#0a1155] text-white p-12 flex-col justify-between relative overflow-hidden">
+        <div className="border-[7px] border-[#212767] w-[592px] h-[455px] rounded-[400px] absolute lg:-top-[200px] xl:-bottom-[300px] -left-[500px] rotate-[-45deg]"></div>
+        <div>
+          <Link href="/">
+            <Image
+              src="/assets/lhasis-logo.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="w-[60px] h-[83px] mb-[101px] ml-[150px]"
+            />
+          </Link>
+          <h1 className="mt-4 text-[74px] w-[485px] !text-bold mx-auto text-[#f3f3f3]">
+            Verify your identity
+          </h1>
+          <p className="text-[19px] text-center text-[#F7E39F] font-semibold mt-[21px] ml-[-30px]">
+            Monitor your property with ease and peace of mind.
+          </p>
+        </div>
+        <div className="border-[7px] border-[white] w-[592px] h-[455px] rounded-[400px] absolute lg:-bottom-[200px] xl:-bottom-[300px] -right-[320px]"></div>
       </div>
-      <div className="w-full md:w-1/2 flex items-center justify-center">
+      <div className="w-full md:w-1/2 flex items-center justify-center bg-white">
         <div className="w-full max-w-md px-8">
           <h1 className="text-3xl font-bold mb-2">Enter OTP</h1>
           <p className="text-gray-500 mb-6">
