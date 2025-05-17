@@ -41,10 +41,7 @@ export function PaymentDetailsModal({ isOpen, onClose, payment }: PaymentDetails
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-1">
-                            <p className="text-sm font-medium text-muted-foreground">Amount</p>
-                            <p className="text-sm font-medium">{payment.formattedAmount}</p>
-                        </div>
+                      
                         <div className="space-y-1">
                             <p className="text-sm font-medium text-muted-foreground">Payment Method</p>
                             <p className="text-sm font-medium capitalize">{payment.paymentMethod}</p>

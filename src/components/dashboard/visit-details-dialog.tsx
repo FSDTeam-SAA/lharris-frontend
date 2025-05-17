@@ -103,7 +103,7 @@ export function VisitDetailsDialog({
     queryKey: ["visit", visitId],
     queryFn: async () => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/visits/get-visit/${visitId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/visits/get-specific-visit/${visitId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -205,7 +205,7 @@ export function VisitDetailsDialog({
                 {visitData.type ? visitData.type.charAt(0).toUpperCase() + visitData.type.slice(1) : "N/A"}
               </p>
               <p className="text-base font-semibold text-[#595959]">
-                {staffName}
+                {staffName || "N/A"}
               </p>
               <p className="text-base font-semibold text-[#595959]">
                 {visitData.address || "N/A"}
