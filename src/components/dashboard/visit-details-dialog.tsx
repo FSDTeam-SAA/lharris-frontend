@@ -91,7 +91,11 @@ export function VisitDetailsDialog({
     },
     onSuccess: () => {
       toast.success("Visit deleted successfully");
-      queryClient.invalidateQueries({ queryKey: ["visits"] });
+      queryClient.invalidateQueries({ queryKey: ["allVisits"] });
+      queryClient.invalidateQueries({ queryKey: ["upcomingVisits"] });
+      queryClient.invalidateQueries({ queryKey: ["pastVisits"] });
+      queryClient.invalidateQueries({ queryKey: ["upcomingVisitsCount"] });
+      queryClient.invalidateQueries({ queryKey: ["pastVisitsCount"] });
       onOpenChange(false);
     },
     onError: (error: Error) => {
@@ -187,7 +191,7 @@ export function VisitDetailsDialog({
               <Trash2 className="h-5 w-5" />
             </button>
           </div>
-          
+
           <div className="flex justify-between mt-4">
             <div className="space-y-5">
               <p className="text-base font-semibold text-[#595959]">Status:</p>
@@ -244,12 +248,12 @@ export function VisitDetailsDialog({
                       <p className="text-base">{issue.issue}</p>
                     </div>
                   </div>
-                  
+
                   <div className="mt-2">
                     <p className="text-sm font-semibold text-[#595959]">Notes:</p>
                     <p className="text-base">{issue.notes}</p>
                   </div>
-                  
+
                   {issue.media && issue.media.length > 0 && (
                     <div className="mt-4">
                       <p className="text-sm font-semibold text-[#595959] mb-2">Media:</p>

@@ -3,7 +3,7 @@
 import type React from "react";
 import { useState, useEffect } from "react"; // Import useEffect
 import { toast } from "sonner";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import {
   Dialog,
@@ -28,7 +28,7 @@ interface ScheduleVisitDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   selectedDateFromPage?: string;
-  selectedMonthFromPage?: string; 
+  selectedMonthFromPage?: string;
   selectedTimeFromPage?: string;
   refetch?: () => void;
 }
@@ -50,12 +50,12 @@ export function ScheduleVisitDialog({
   refetch
 }: ScheduleVisitDialogProps) {
   const [visitType, setVisitType] = useState("routine-check");
-  const [selectedDate, setSelectedDate] = useState(selectedDateFromPage || ""); 
+  const [selectedDate, setSelectedDate] = useState(selectedDateFromPage || "");
   const [selectedMonth, setSelectedMonth] = useState(selectedMonthFromPage || "");
   const [selectedTime, setSelectedTime] = useState(selectedTimeFromPage || "");
   const [address, setAddress] = useState("");
+  const queryClient = useQueryClient();
 
- 
   useEffect(() => {
     setSelectedDate(selectedDateFromPage || "");
   }, [selectedDateFromPage]);
@@ -64,7 +64,7 @@ export function ScheduleVisitDialog({
     setSelectedMonth(selectedMonthFromPage || "");
   }, [selectedMonthFromPage]);
 
-    useEffect(() => {
+  useEffect(() => {
     setSelectedTime(selectedTimeFromPage || "");
   }, [selectedTimeFromPage]);
 
@@ -98,7 +98,7 @@ export function ScheduleVisitDialog({
     );
 
     if (!response.ok) {
-      throw new Error("Failed to schedule visit");
+      throw new Error("You already have a visit");
     }
 
     return response.json();
@@ -117,10 +117,10 @@ export function ScheduleVisitDialog({
       setSelectedMonth("");
       setSelectedTime("");
       setVisitType("routine-check");
+      queryClient.invalidateQueries({ queryKey: ["upcomingVisits"] });
     },
     onError: (error) => {
-      toast.error( error.message || "Error scheduling visit. Please try again.");
-   
+      toast.error(error.message || "Error scheduling visit. Please try again.");
     },
   });
 
