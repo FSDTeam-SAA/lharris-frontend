@@ -30,7 +30,7 @@ export default function SecurityServices() {
 
       {/* Residential Service Cards */}
       {activeTab === "residential" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Mobile Patrols */}
           <div className="bg-[#FFFFFF1A] rounded-lg p-6 flex flex-col h-full">
             <div className="text-primary mb-4">
@@ -58,39 +58,6 @@ export default function SecurityServices() {
               <div className="flex items-start">
                 <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                 <span>Property inspection</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Alarm Response */}
-          <div className="bg-[#FFFFFF1A] rounded-lg p-6 flex flex-col h-full">
-            <div className="text-primary mb-4">
-              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 15 H30 V40 H20 Z" stroke="#f0d878" strokeWidth="2" fill="none" />
-                <circle cx="25" cy="20" r="2" fill="#f0d878" />
-                <circle cx="25" cy="25" r="2" fill="#f0d878" />
-                <circle cx="25" cy="30" r="2" fill="#f0d878" />
-                <circle cx="25" cy="35" r="2" fill="#f0d878" />
-                <path d="M30 25 L40 20 L40 35 L30 30 Z" stroke="#f0d878" strokeWidth="2" fill="none" />
-                <path d="M40 25 Q45 20 50 25" stroke="#f0d878" strokeWidth="2" fill="none" />
-                <path d="M40 30 Q45 35 50 30" stroke="#f0d878" strokeWidth="2" fill="none" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold mb-2">Alarm Response</h3>
-            <p className="text-primary mb-4">Swift response to alarm activations</p>
-
-            <div className="space-y-2 mt-auto">
-              <div className="flex items-start">
-                <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                <span>Timely assessment</span>
-              </div>
-              <div className="flex items-start">
-                <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                <span>Immediate action</span>
-              </div>
-              <div className="flex items-start">
-                <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                <span>Detailed reporting</span>
               </div>
             </div>
           </div>

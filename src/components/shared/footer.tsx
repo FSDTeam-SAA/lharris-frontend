@@ -1,14 +1,16 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Twitter, Instagram, Linkedin, Facebook, Send } from "lucide-react";
+import { FaInstagram, FaLinkedin, FaTiktok, FaTwitter } from "react-icons/fa";
+
 import { useState } from "react";
+import { Send } from "lucide-react";
 
 
 export default function Footer() {
   const [email, setEmail] = useState("");
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     if (email) {
 
@@ -87,25 +89,9 @@ export default function Footer() {
                   href="/contact#contactus"
                   className="text-gray-300 text-sm hover:text-primary"
                 >
-                Contact Us
+                  Contact Us
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  href="#"
-                  className="text-gray-300 text-sm hover:text-primary"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-gray-300 text-sm hover:text-primary"
-                >
-                  Compliance
-                </Link>
-              </li> */}
             </ul>
           </div>
           <div>
@@ -125,27 +111,27 @@ export default function Footer() {
 
             </form>
             <div className="flex gap-4 mt-4">
-              <Link href="#" className="text-gray-300 hover:text-primary">
-                <Facebook className="h-5 w-5 text-[#F7E39F]" />
+              <Link href="https://www.tiktok.com/@royalhousecheck?is_from_webapp=1&sender_device=pc" target="_blank" className="text-gray-300 hover:text-primary">
+                <FaTiktok className="h-5 w-5 text-[#F7E39F]" />
               </Link>
-              <Link href="#" className="text-gray-300 hover:text-primary">
-                <Twitter className="h-5 w-5 text-[#F7E39F]" />
+              <Link href="https://www.linkedin.com/in/royalhousecheck" target="_blank" className="text-gray-300 hover:text-primary">
+                <FaLinkedin className="h-5 w-5 text-[#F7E39F]" />
               </Link>
-              <Link href="#" className="text-gray-300 hover:text-primary">
-                <Instagram className="h-5 w-5 text-[#F7E39F]" />
+              <Link href="https://www.instagram.com/royalhousecheck/" target="_blank" className="text-gray-300 hover:text-primary">
+                <FaInstagram className="h-5 w-5 text-[#F7E39F]" />
               </Link>
-              <Link href="#" className="text-gray-300 hover:text-primary">
-                <Linkedin className="h-5 w-5 text-[#F7E39F]" />
+              <Link href="https://x.com/royalhousecheck" target="_blank" className="text-gray-300 hover:text-primary">
+                <FaTwitter className="h-5 w-5 text-[#F7E39F]" />
               </Link>
             </div>
           </div>
         </div>
         <div className="pt-6 text-center">
           <p className="text-gray-400 text-xs">
-            © 2023 - SecureHome Solutions. All rights reserved.
+            © 2023 - Royal House Check. All rights reserved.
           </p>
           <p className="text-gray-400 text-xs mt-2">
-            24/7 Emergency Support • 1-800-555-0123
+            24/7 Emergency Support • 336-995-3239
           </p>
         </div>
       </div>

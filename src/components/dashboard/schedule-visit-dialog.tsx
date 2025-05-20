@@ -97,18 +97,21 @@ export function ScheduleVisitDialog({
       }
     );
 
+    const resData = await response.json();
+
     if (!response.ok) {
-      throw new Error("You already have a visit");
+      toast.error(resData.message);
     }
 
-    return response.json();
+    return resData;
   };
 
   // TanStack Query mutation
   const mutation = useMutation({
     mutationFn: createVisit,
     onSuccess: () => {
-      toast.success("Visit scheduled successfully!");
+      // toast(mutation.data.message);
+      console.log(mutation.data);
       refetch?.();
       onOpenChange(false);
       // Reset form
