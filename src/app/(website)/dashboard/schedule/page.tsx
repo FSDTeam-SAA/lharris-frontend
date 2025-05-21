@@ -218,7 +218,7 @@ export default function SchedulePage() {
                               </Badge>
                             </TableCell>
                             <TableCell>
-                              {visit.type || "Routine Check"}
+                              {visit.type || "N/A"}
                             </TableCell>
                             <TableCell className="text-right">
                               <div className="flex justify-end gap-2">

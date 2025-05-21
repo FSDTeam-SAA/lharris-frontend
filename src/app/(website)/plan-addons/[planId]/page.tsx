@@ -320,7 +320,7 @@ export default function AddOnsPage() {
           <h3 className="text-xl font-semibold mb-6 text-white">
             Order Summary
           </h3>
-          <Card className="bg-[#FFFFFF1A] border-0 overflow-hidden sticky top-8">
+          <Card className="bg-[#FFFFFF1A] border-0 overflow-hidden">
             <CardContent className="p-6">
               <div className="space-y-4">
                 <div className="flex justify-between">

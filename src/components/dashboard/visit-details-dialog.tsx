@@ -52,6 +52,18 @@ interface Visit {
   createdAt?: string;
   time?: string;
   report?: string;
+  userPlan?: {
+    plan: {
+      _id: string;
+      name: string;
+    }
+    addOnServices: [
+      {
+        _id: string;
+        name: string;
+      }
+    ]
+  }
 }
 
 interface VisitDetailsDialogProps {
@@ -167,7 +179,9 @@ export function VisitDetailsDialog({
   }
 
   const visitData = visit.data;
-  const staffName = typeof visitData.staff === 'object' ? visitData.staff?.fullname : 'N/A';
+  const staffName = typeof visitData?.staff === 'object' ? visitData?.staff?.fullname : 'N/A';
+
+  console.log(visitData)
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -178,8 +192,8 @@ export function VisitDetailsDialog({
         <div className="mt-7">
           <div className="flex justify-between items-center">
             <h2 className="text-[24px] text-[#091057] font-bold">
-              {visitData.date
-                ? format(new Date(visitData.date), "MMMM d, yyyy")
+              {visitData?.date
+                ? format(new Date(visitData?.date), "MMMM d, yyyy")
                 : "N/A"}
             </h2>
             <button
@@ -199,34 +213,42 @@ export function VisitDetailsDialog({
               <p className="text-base font-semibold text-[#595959]">Staff:</p>
               <p className="text-base font-semibold text-[#595959]">Address:</p>
               <p className="text-base font-semibold text-[#595959]">Notes:</p>
-              <p className="text-base font-semibold text-[#595959]">Payment Status:</p>
+              <p className="text-base font-semibold text-[#595959]">Plan:</p>
+              <h3 className="text-base font-semibold text-[#595959]">Add-on Services: </h3>
+              <ul className="text-base font-semibold text-[#595959] list-disc list-inside">
+                {visitData?.userPlan?.addOnServices?.map((service) => (
+                  <li key={service._id} >
+                    {service.name}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="space-y-5">
               <p className="text-base font-semibold text-[#595959]">
-                {visitData.status ? visitData.status.charAt(0).toUpperCase() + visitData.status.slice(1) : "N/A"}
+                {visitData?.status ? visitData?.status.charAt(0).toUpperCase() + visitData?.status.slice(1) : "N/A"}
               </p>
               <p className="text-base font-semibold text-[#595959]">
-                {visitData.type ? visitData.type.charAt(0).toUpperCase() + visitData.type.slice(1) : "N/A"}
+                {visitData?.type ? visitData?.type.charAt(0).toUpperCase() + visitData?.type.slice(1) : "N/A"}
               </p>
               <p className="text-base font-semibold text-[#595959]">
                 {staffName || "N/A"}
               </p>
               <p className="text-base font-semibold text-[#595959]">
-                {visitData.address || "N/A"}
+                {visitData?.address || "N/A"}
               </p>
               <p className="text-base font-semibold text-[#595959]">
-                {visitData.notes || "N/A"}
+                {visitData?.notes || "N/A"}
               </p>
               <p className="text-base font-semibold text-[#595959]">
-                {visitData.isPaid ? "Paid" : "Unpaid"}
+                {visitData?.userPlan?.plan?.name || "N/A"}
               </p>
             </div>
           </div>
 
-          {visitData.issues && visitData.issues.length > 0 && (
+          {visitData?.issues && visitData?.issues.length > 0 && (
             <div className="mt-8">
               <h3 className="text-lg font-bold text-[#091057] mb-4">Issues Found</h3>
-              {visitData.issues.map((issue) => (
+              {visitData?.issues.map((issue) => (
                 <div key={issue._id} className="mb-6 p-4 border rounded-lg">
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>

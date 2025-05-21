@@ -162,8 +162,10 @@ export default function VisitLogsPage() {
     )
   }
 
+  
   const renderTable = (visits: Visit[], pagination, tab: keyof typeof currentPage) => (
     <>
+    {console.log(visits)}
       <div className="rounded-md border">
         <Table>
           <TableHeader>
@@ -248,7 +250,7 @@ export default function VisitLogsPage() {
                     </Badge>
                   </TableCell>
                   <TableCell>{visit.type || "N/A"}</TableCell>
-                  <TableCell className="max-w-[200px] truncate">{visit.notes}</TableCell>
+                  <TableCell className="max-w-[200px] truncate">{visit.notes || "N/A"}</TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
                       <Button variant="ghost" size="icon" onClick={() => handleViewDetails(visit)}>
