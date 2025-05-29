@@ -6,6 +6,7 @@ import LayoutWrapper from "@/components/shared/layout-wrapper";
 import AuthProvider from "@/components/session-provide";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <AuthProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
           <ToastContainer position="top-right" autoClose={3000} />
-          {/* <Toaster /> */}
+          <Toaster position="top-right"/>
         </AuthProvider>
       </body>
     </html>
