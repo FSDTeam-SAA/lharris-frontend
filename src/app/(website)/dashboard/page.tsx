@@ -20,7 +20,7 @@ export default function DashboardPage() {
   const [selectedMonthFromPage, setSelectedMonthFromPage] = useState("")
   const [selectedDateFromPage, setSelectedDateFromPage] = useState("")
   const [selectedTimeFromPage, setSelectedTimeFromPage] = useState("")
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date())
+  const [selectedDate, setSelectedDate] = useState<Date | null>()
 
   const handleScheduleVisit = () => {
     setScheduleDialogOpen(true)
