@@ -47,7 +47,7 @@ export function ScheduleVisitDialog({
   const [address, setAddress] = useState("")
   const queryClient = useQueryClient()
   const [calendarDate, setCalendarDate] = useState<Date | null>(
-    selectedDateFromPage ? new Date(selectedDateFromPage) : new Date(),
+    selectedDateFromPage ? new Date(selectedDateFromPage) : null,
   )
 
   useEffect(() => {
