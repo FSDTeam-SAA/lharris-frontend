@@ -102,7 +102,7 @@ export default function PricingSection() {
   }
 
   return (
-    <section className="container py-16">
+    <section className="container py-16" id="pricing">
       <div className="text-center mb-12">
         <h2 className="text-[28px] md:text-[40px] font-bold mb-2">
           <div className="text-white">Powerful features for</div>

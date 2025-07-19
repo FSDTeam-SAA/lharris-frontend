@@ -1,8 +1,31 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
+import { useSession } from "next-auth/react";
 
 export default function ScheduleVisitSection() {
+
+  const { data: session } = useSession()
+
+  const { data: userPayment } = useQuery({
+    queryKey: ["userPayment"],
+    queryFn: async () => {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/visits/check-payment-status`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${session?.accessToken}`,
+        }
+      });
+      return res.json();
+    },
+    enabled: !!session?.accessToken,
+  })
+
+  console.log(userPayment)
+
   return (
     <section className="container pb-16">
       <div className="bg-[#FFFFFF1A] rounded-lg overflow-hidden">
@@ -46,7 +69,7 @@ export default function ScheduleVisitSection() {
                 </span>
               </li>
             </ul>
-            <Link href="/dashboard/schedule">
+            <Link href={userPayment?.status ? "/dashboard/schedule" : "/#pricing"} className="w-full">
               <Button className="px-6 py-3 md:px-[32px] md:py-[16px] h-[48px] md:h-[52px] w-full md:w-[220px] bg-[#F7E39F] text-base text-[#091057] hover:bg-[#F7E39F]/80 font-medium">
 
                 {/* Made button responsive */}
