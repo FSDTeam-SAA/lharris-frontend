@@ -124,9 +124,9 @@ export default function SecurityServices() {
 
       {/* Commercial Services */}
       {activeTab === "commercial" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:px-32">
           {/* Access Control */}
-          <div className="bg-[#FFFFFF1A] rounded-lg p-6 flex flex-col h-full">
+          {/* <div className="bg-[#FFFFFF1A] rounded-lg p-6 flex flex-col h-full">
             <div className="text-primary mb-4">
               <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="15" y="20" width="30" height="25" rx="2" stroke="#f0d878" strokeWidth="2" fill="none" />
@@ -152,7 +152,7 @@ export default function SecurityServices() {
                 <span>Access logs</span>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Security Guards */}
           <div className="bg-[#FFFFFF1A] rounded-lg p-6 flex flex-col h-full">
@@ -188,7 +188,7 @@ export default function SecurityServices() {
           </div>
 
           {/* CCTV Monitoring */}
-          <div className="bg-[#FFFFFF1A] rounded-lg p-6 flex flex-col h-full">
+          {/* <div className="bg-[#FFFFFF1A] rounded-lg p-6 flex flex-col h-full">
             <div className="text-primary mb-4">
               <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 20 H25 V40 H15 Z" stroke="#f0d878" strokeWidth="2" fill="none" />
@@ -214,7 +214,7 @@ export default function SecurityServices() {
                 <span>Remote viewing</span>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Risk Assessment */}
           <div className="bg-[#FFFFFF1A] rounded-lg p-6 flex flex-col h-full">

@@ -5,17 +5,13 @@ import { FaInstagram, FaLinkedin, FaTiktok, FaTwitter } from "react-icons/fa";
 import { useState } from "react";
 import { Send } from "lucide-react";
 
-
 export default function Footer() {
   const [email, setEmail] = useState("");
 
-
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (email) {
-
       setEmail("");
-
     }
   };
 
@@ -107,20 +103,34 @@ export default function Footer() {
               <Button type="submit" className="rounded-l-none">
                 <Send className="h-4 w-4 text-[#091057]" />
               </Button>
-
-
             </form>
             <div className="flex gap-4 mt-4">
-              <Link href="https://www.tiktok.com/@royalhousecheck?is_from_webapp=1&sender_device=pc" target="_blank" className="text-gray-300 hover:text-primary">
+              <Link
+                href="https://www.tiktok.com/@royalhousecheck?is_from_webapp=1&sender_device=pc"
+                target="_blank"
+                className="text-gray-300 hover:text-primary"
+              >
                 <FaTiktok className="h-5 w-5 text-[#F7E39F]" />
               </Link>
-              <Link href="https://www.linkedin.com/in/royalhousecheck" target="_blank" className="text-gray-300 hover:text-primary">
+              <Link
+                href="https://www.linkedin.com/in/royalhousecheck"
+                target="_blank"
+                className="text-gray-300 hover:text-primary"
+              >
                 <FaLinkedin className="h-5 w-5 text-[#F7E39F]" />
               </Link>
-              <Link href="https://www.instagram.com/royalhousecheck/" target="_blank" className="text-gray-300 hover:text-primary">
+              <Link
+                href="https://www.instagram.com/royalhousecheck/"
+                target="_blank"
+                className="text-gray-300 hover:text-primary"
+              >
                 <FaInstagram className="h-5 w-5 text-[#F7E39F]" />
               </Link>
-              <Link href="https://x.com/royalhousecheck" target="_blank" className="text-gray-300 hover:text-primary">
+              <Link
+                href="https://x.com/royalhousecheck"
+                target="_blank"
+                className="text-gray-300 hover:text-primary"
+              >
                 <FaTwitter className="h-5 w-5 text-[#F7E39F]" />
               </Link>
             </div>
@@ -131,7 +141,7 @@ export default function Footer() {
             © 2023 - Royal House Check. All rights reserved.
           </p>
           <p className="text-gray-400 text-xs mt-2">
-            24/7 Emergency Support • 336-995-3239
+            24/7 Emergency Support •  (214) 531 6256
           </p>
         </div>
       </div>

@@ -21,7 +21,7 @@ export default function ContactBanner() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
             <Button className="text-[14px] sm:text-[16px] w-full sm:w-auto h-[52px] text-[#091057]">
-              Call Now: 336-995-3239
+              Call Now: (214) 531 6256
             </Button>
           </div>
         </div>

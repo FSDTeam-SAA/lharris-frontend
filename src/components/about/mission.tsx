@@ -139,15 +139,6 @@ const Mission = () => {
             </div>
             <div className="p-5 rounded-xl bg-[#FFFFFF1A]">
               <h3 className="text-xl font-bold text-[#F7E39F] pb-3">
-                Alarm Response
-              </h3>
-              <p className="text-base text-white">
-                Swift response to alarm activations, ensuring timely assessment
-                and action.
-              </p>
-            </div>
-            <div className="p-5 rounded-xl bg-[#FFFFFF1A]">
-              <h3 className="text-xl font-bold text-[#F7E39F] pb-3">
                 Vacation Watch
               </h3>
               <p className="text-base text-white">

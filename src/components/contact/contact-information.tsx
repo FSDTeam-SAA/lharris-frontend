@@ -18,10 +18,10 @@ const ContactInformation = () => {
         </div>
         <div className="text-white">
           <p className="text-[12px] md:text-[16px] font-semibold mb-2">
-            24/7 Hotline: 336-995-3239
+            24/7 Hotline: (214) 531 6256
           </p>
           <p className="text-[12px] md:text-[16px] font-semibold">
-            Non-Emergency: 336-995-3239
+            Non-Emergency:  (214) 531 6256
           </p>
         </div>
       </div>
