@@ -1,7 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FaInstagram, FaLinkedin, FaTiktok, FaTwitter } from "react-icons/fa";
-
 import { useState } from "react";
 import { Send } from "lucide-react";
 
@@ -16,34 +17,34 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-blue-900/30 pt-12 pb-6">
+    <footer className="border-t border-primary/20 pt-12 pb-6">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="text-white font-medium mb-4">About Us</h3>
+            <h3 className="text-white font-medium mb-4">About</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/about#mission"
-                  className="text-gray-300 text-sm hover:text-primary"
+                  className="text-primary/75 text-sm hover:text-primary"
                 >
-                  Company Story
+                  Who We Are
                 </Link>
               </li>
               <li>
                 <Link
                   href="/about#our-journey"
-                  className="text-gray-300 text-sm hover:text-primary"
+                  className="text-primary/75 text-sm hover:text-primary"
                 >
-                  Our Journey
+                  How We Started
                 </Link>
               </li>
               <li>
                 <Link
                   href="about#our-services"
-                  className="text-gray-300 text-sm hover:text-primary"
+                  className="text-primary/75 text-sm hover:text-primary"
                 >
-                  Our Services
+                  What We Offer
                 </Link>
               </li>
             </ul>
@@ -54,25 +55,25 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services#security-services"
-                  className="text-gray-300 text-sm hover:text-primary"
+                  className="text-primary/75 text-sm hover:text-primary"
                 >
-                  Video Monitoring
+                  Camera Monitoring
                 </Link>
               </li>
               <li>
                 <Link
                   href="/dashboard/schedule"
-                  className="text-gray-300 text-sm hover:text-primary"
+                  className="text-primary/75 text-sm hover:text-primary"
                 >
-                  Visit Scheduling
+                  Visit Booking
                 </Link>
               </li>
               <li>
                 <Link
                   href="/services#pricing-section"
-                  className="text-gray-300 text-sm hover:text-primary"
+                  className="text-primary/75 text-sm hover:text-primary"
                 >
-                  Payment Plans
+                  Service Plans
                 </Link>
               </li>
             </ul>
@@ -83,65 +84,68 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact#contactus"
-                  className="text-gray-300 text-sm hover:text-primary"
+                  className="text-primary/75 text-sm hover:text-primary"
                 >
-                  Contact Us
+                  Reach Our Team
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-white font-medium mb-4">Stay Updated</h3>
+            <h3 className="text-white font-medium mb-4">Stay Informed</h3>
             <form onSubmit={handleSubmit} className="flex relative">
               <input
                 type="email"
-                placeholder="Your email"
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-[#1F2937] text-white px-3 py-2 rounded-l-md text-sm focus:outline-none focus:ring-1 focus:ring-yellow-400"
+                className="bg-card text-white px-3 py-2 rounded-l-md text-sm focus:outline-none focus:ring-1 focus:ring-primary"
               />
-              <Button type="submit" className="rounded-l-none">
-                <Send className="h-4 w-4 text-[#091057]" />
+              <Button
+                type="submit"
+                className="rounded-l-none bg-primary text-primary-foreground hover:bg-primary/85"
+              >
+                <Send className="h-4 w-4 text-primary-foreground" />
               </Button>
             </form>
             <div className="flex gap-4 mt-4">
               <Link
                 href="https://www.tiktok.com/@royalhousecheck?is_from_webapp=1&sender_device=pc"
                 target="_blank"
-                className="text-gray-300 hover:text-primary"
+                className="text-primary/75 hover:text-primary"
               >
-                <FaTiktok className="h-5 w-5 text-[#F7E39F]" />
+                <FaTiktok className="h-5 w-5 text-primary" />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/royalhousecheck"
                 target="_blank"
-                className="text-gray-300 hover:text-primary"
+                className="text-primary/75 hover:text-primary"
               >
-                <FaLinkedin className="h-5 w-5 text-[#F7E39F]" />
+                <FaLinkedin className="h-5 w-5 text-primary" />
               </Link>
               <Link
                 href="https://www.instagram.com/royalhousecheck/"
                 target="_blank"
-                className="text-gray-300 hover:text-primary"
+                className="text-primary/75 hover:text-primary"
               >
-                <FaInstagram className="h-5 w-5 text-[#F7E39F]" />
+                <FaInstagram className="h-5 w-5 text-primary" />
               </Link>
               <Link
                 href="https://x.com/royalhousecheck"
                 target="_blank"
-                className="text-gray-300 hover:text-primary"
+                className="text-primary/75 hover:text-primary"
               >
-                <FaTwitter className="h-5 w-5 text-[#F7E39F]" />
+                <FaTwitter className="h-5 w-5 text-primary" />
               </Link>
             </div>
           </div>
         </div>
         <div className="pt-6 text-center">
-          <p className="text-gray-400 text-xs">
-            © 2023 - Royal House Check. All rights reserved.
+          <p className="text-primary/60 text-xs">
+            (c) 2023 Royal House Check. All rights reserved.
           </p>
-          <p className="text-gray-400 text-xs mt-2">
-            24/7 Emergency Support •  (214) 531 6256
+          <p className="text-primary/60 text-xs mt-2">
+            24/7 emergency support | (214) 531 6256
           </p>
         </div>
       </div>
