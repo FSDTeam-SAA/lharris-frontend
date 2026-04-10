@@ -12,19 +12,16 @@ export default function HeroSection() {
         <div className="flex flex-col justify-between h-full min-w-[320px] lg:min-w-[540px]">
           <div className="space-y-6">
             <h1 className="text-[28px] lg:text-[34px] xl:text-[40px] font-bold text-primary">
-              24/7 Professional Security Monitoring
+              Day-and-night security coverage for the places that matter most
             </h1>
-            <p className="text-primary">
-              Schedule Your First Security Visit in 2 Minutes
+            <p className="max-w-xl text-base text-primary/85 md:text-lg">
+              Arrange your first property check in minutes, stay informed with live updates,
+              and manage every visit from one secure dashboard.
             </p>
             <div className="flex flex-wrap gap-4 justify-start">
-              {" "}
-              {/* Added justify-start */}
               <Link href="/dashboard">
-                <Button className="text-secondary px-6 bg-[#F7E39F] text-[#091057] text-base font-bold hover:bg-[#F7E39F]/80  py-[12px] rounded-lg">
-                  {" "}
-                  {/* Adjusted padding */}
-                  Get Started
+                <Button className="px-6 bg-primary text-primary-foreground text-base font-bold hover:bg-primary/85 py-[12px] rounded-lg">
+                  Book Your First Visit
                 </Button>
               </Link>
             </div>
@@ -36,14 +33,12 @@ export default function HeroSection() {
 
         {/* Right Column: Image */}
         <div className="flex justify-center items-center max-w-full lg:max-w-[500px] mt-36 md:mt-0">
-          {" "}
-          {/* Added mt-8 for mobile spacing */}
           <Image
             src="/assets/hero.png"
             alt="Security lock and chain"
             width={500}
             height={400}
-            className="rounded-lg h-auto w-full object-contain" // Changed h-full to h-auto and w-full, object-cover to object-contain
+            className="rounded-lg h-auto w-full object-contain"
           />
         </div>
       </div>

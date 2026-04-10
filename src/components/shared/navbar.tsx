@@ -26,7 +26,7 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href
 
   return (
-    <header className="bg-secondary border-b border-blue-900/30 text-white sticky">
+    <header className="bg-secondary/95 border-b border-primary/20 text-white backdrop-blur sticky">
       <div className="container mx-auto flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -78,11 +78,11 @@ export default function Navbar() {
                 {/* Mobile Auth Button */}
                 {isLoggedIn ? (
                   <Link href="/dashboard" onClick={() => setOpen(false)} className="mt-4">
-                    <Button className="bg-[#F7E39F] hover:bg-[#F7E39F]/80  text-[#091057] font-medium text-sm w-full">Dashboard</Button>
+                    <Button className="bg-primary hover:bg-primary/85 text-primary-foreground font-medium text-sm w-full">Dashboard</Button>
                   </Link>
                 ) : (
                   <Link href="/login" onClick={() => setOpen(false)} className="mt-4">
-                    <Button className="bg-[#F7E39F] hover:bg-[#F7E39F]/80  text-[#091057] font-medium text-sm w-full">Login</Button>
+                    <Button className="bg-primary hover:bg-primary/85 text-primary-foreground font-medium text-sm w-full">Login</Button>
                   </Link>
                 )}
               </nav>
@@ -94,11 +94,11 @@ export default function Navbar() {
         <div className="hidden md:block">
           {isLoggedIn ? (
             <Link href="/dashboard">
-              <Button className="bg-[#F7E39F] hover:bg-[#F7E39F]/80 text-[#091057] font-medium text-sm">Dashboard</Button>
+              <Button className="bg-primary hover:bg-primary/85 text-primary-foreground font-medium text-sm">Dashboard</Button>
             </Link>
           ) : (
             <Link href="/login">
-              <Button className="bg-[#F7E39F] hover:bg-[#F7E39F]/80 text-[#091057] font-medium text-sm">Login</Button>
+              <Button className="bg-primary hover:bg-primary/85 text-primary-foreground font-medium text-sm">Login</Button>
             </Link>
           )}
         </div>
