@@ -78,7 +78,7 @@ export default function PricingSection() {
         // Clean up the text and remove any HTML tags
         const text = item.textContent?.trim() || ""
         // Check if the text starts with a bullet point or similar character
-        return text.replace(/^[•\-*]\s*/, "").trim()
+        return text.replace(/^[\u2022\-*]\s*/, "").trim()
       })
       .filter((item) => item.length > 0) // Filter out empty items
   }
@@ -94,7 +94,7 @@ export default function PricingSection() {
         <div className="flex justify-center items-center min-h-[400px]">
           <div className="flex flex-col items-center gap-4">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
-            <p className="text-gray-300">Loading plans...</p>
+            <p className="text-primary/75">Loading protection plans...</p>
           </div>
         </div>
       </section>
@@ -105,10 +105,10 @@ export default function PricingSection() {
     <section className="container py-16" id="pricing">
       <div className="text-center mb-12">
         <h2 className="text-[28px] md:text-[40px] font-bold mb-2">
-          <div className="text-white">Powerful features for</div>
-          <div className="text-primary">powerful creators</div>
+          <div className="text-white">Flexible protection built for</div>
+          <div className="text-primary">homes, properties, and small teams</div>
         </h2>
-        <p className="text-gray-300">Choose a plan that&apos;s right for you</p>
+        <p className="text-primary/75">Choose the level of coverage that fits how you need us to show up.</p>
       </div>
 
       <div className="w-full">
@@ -123,22 +123,22 @@ export default function PricingSection() {
           <CarouselContent>
             {plans?.map((plan: Plan) => (
               <CarouselItem key={plan._id} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                <Card className="h-full group bg-[#FFFFFF1A] hover:bg-[linear-gradient(170.72deg,_#F7E39F_-8.75%,_#091057_110.07%)] hover:text-[#091057] text-[#F7E39F] border-0 overflow-hidden py-10">
+                <Card className="h-full group bg-card/80 hover:bg-[#241b0d] text-white border border-primary/15 hover:border-primary/40 overflow-hidden py-10">
                   <CardContent className="p-6">
                     <div className="mb-5">
-                      <h3 className="text-xl font-semibold capitalize">{plan.name}</h3>
+                      <h3 className="text-xl font-semibold capitalize text-primary">{plan.name}</h3>
                     </div>
                     <div className="mb-10 space-x-3">
-                      <span className="text-4xl font-bold">$ {plan.price}</span>
-                      <span className="text-sm text-[#F7E39F] group-hover:text-[#091057]">/ {plan.pack}</span>
+                      <span className="text-4xl font-bold text-white">$ {plan.price}</span>
+                      <span className="text-sm text-primary/80">/ {plan.pack}</span>
                     </div>
                     <ul className="space-y-3 pb-10 min-h-[200px]">
                       {extractFeatures(plan.description).map((feature, index) => (
                         <li key={index} className="flex items-start gap-3">
-                          <span className="rounded-full bg-[#F7E39F] group-hover:bg-[#091057] p-1 mt-0.5 flex-shrink-0">
-                            <Check className="h-3.5 w-3.5 group-hover:text-[#F7E39F] text-[#091057]" />
+                          <span className="rounded-full bg-primary p-1 mt-0.5 flex-shrink-0">
+                            <Check className="h-3.5 w-3.5 text-primary-foreground" />
                           </span>
-                          <span className="text-sm group-hover:text-white text-[#F7E39F]">{feature}</span>
+                          <span className="text-sm text-primary/80 group-hover:text-primary/90">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -147,15 +147,15 @@ export default function PricingSection() {
                     <Button
                       onClick={() => handleSelectPlan(plan._id)}
                       disabled={isLoading === plan._id}
-                      className="w-full bg-[#f8d87c] text-[#050a3a] hover:bg-[#f8d87c]/90"
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/85"
                     >
                       {isLoading === plan._id ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Processing...
+                          Opening...
                         </>
                       ) : (
-                        "Choose Plan"
+                        "View Plan"
                       )}
                     </Button>
                   </CardFooter>
@@ -164,17 +164,17 @@ export default function PricingSection() {
             ))}
           </CarouselContent>
           <div className="flex items-center justify-center gap-2 mt-6">
-            <CarouselPrevious className="static transform-none bg-transparent border-none hover:bg-transparent text-[#F7E39F] hover:text-[#F7E39F]/80" />
+            <CarouselPrevious className="static transform-none bg-transparent border-none hover:bg-transparent text-primary hover:text-primary/80" />
             <div className="flex gap-2">
               {plans?.map((_, index) => (
                 <div
                   key={index}
-                  className={`h-2 w-2 rounded-full transition-all ${currentIndex === index ? "bg-[#F7E39F] w-6" : "bg-gray-300"
+                  className={`h-2 w-2 rounded-full transition-all ${currentIndex === index ? "bg-primary w-6" : "bg-primary/25"
                     }`}
                 />
               ))}
             </div>
-            <CarouselNext className="static transform-none bg-transparent border-none hover:bg-transparent text-[#F7E39F] hover:text-[#F7E39F]/80" />
+            <CarouselNext className="static transform-none bg-transparent border-none hover:bg-transparent text-primary hover:text-primary/80" />
           </div>
         </Carousel>
       </div>

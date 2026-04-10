@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-[#091057]`}>
+      <body className={inter.className}>
         <AuthProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
           <ToastContainer position="top-right" autoClose={3000} />
